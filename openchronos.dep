@@ -1,0 +1,291 @@
+# DO NOT DELETE
+
+openchronos.o: ./openchronos.h /usr/msp430/include/msp430.h
+openchronos.o: /usr/msp430/include/cc430f6137.h
+openchronos.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+openchronos.o: /usr/msp430/include/intrinsics.h /usr/msp430/include/stdlib.h
+openchronos.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+openchronos.o: /usr/msp430/include/sys/types.h
+openchronos.o: /usr/msp430/include/sys/cdefs.h
+openchronos.o: /usr/msp430/include/sys/inttypes.h
+openchronos.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+openchronos.o: /usr/msp430/include/msp430libc.h config.h modinit.h
+openchronos.o: ./drivers/display.h ./drivers/vti_as.h ./drivers/bmp_ps.h
+openchronos.o: ./drivers/buzzer.h ./drivers/ports.h ./drivers/timer.h
+openchronos.o: ./drivers/pmm.h ./drivers/rf1a.h ./drivers/rtca.h
+openchronos.o: ./drivers/temperature.h ./drivers/battery.h
+boot.o: ./openchronos.h /usr/msp430/include/msp430.h
+boot.o: /usr/msp430/include/cc430f6137.h /usr/msp430/include/iomacros.h
+boot.o: /usr/msp430/include/in430.h /usr/msp430/include/intrinsics.h
+boot.o: /usr/msp430/include/stdlib.h
+boot.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+boot.o: /usr/msp430/include/sys/types.h /usr/msp430/include/sys/cdefs.h
+boot.o: /usr/msp430/include/sys/inttypes.h /usr/msp430/include/inttypes.h
+boot.o: /usr/msp430/include/stdint.h /usr/msp430/include/msp430libc.h
+boot.o: config.h ./drivers/pmm.h
+drivers/vti_as.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/vti_as.o: /usr/msp430/include/cc430f6137.h
+drivers/vti_as.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/vti_as.o: /usr/msp430/include/intrinsics.h
+drivers/vti_as.o: /usr/msp430/include/stdlib.h
+drivers/vti_as.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/vti_as.o: /usr/msp430/include/sys/types.h
+drivers/vti_as.o: /usr/msp430/include/sys/cdefs.h
+drivers/vti_as.o: /usr/msp430/include/sys/inttypes.h
+drivers/vti_as.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+drivers/vti_as.o: /usr/msp430/include/msp430libc.h config.h drivers/vti_as.h
+drivers/vti_as.o: drivers/timer.h
+drivers/infomem.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/infomem.o: /usr/msp430/include/cc430f6137.h
+drivers/infomem.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/infomem.o: /usr/msp430/include/intrinsics.h
+drivers/infomem.o: /usr/msp430/include/stdlib.h
+drivers/infomem.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/infomem.o: /usr/msp430/include/sys/types.h
+drivers/infomem.o: /usr/msp430/include/sys/cdefs.h
+drivers/infomem.o: /usr/msp430/include/sys/inttypes.h
+drivers/infomem.o: /usr/msp430/include/inttypes.h
+drivers/infomem.o: /usr/msp430/include/stdint.h
+drivers/infomem.o: /usr/msp430/include/msp430libc.h config.h
+drivers/buzzer.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/buzzer.o: /usr/msp430/include/cc430f6137.h
+drivers/buzzer.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/buzzer.o: /usr/msp430/include/intrinsics.h
+drivers/buzzer.o: /usr/msp430/include/stdlib.h
+drivers/buzzer.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/buzzer.o: /usr/msp430/include/sys/types.h
+drivers/buzzer.o: /usr/msp430/include/sys/cdefs.h
+drivers/buzzer.o: /usr/msp430/include/sys/inttypes.h
+drivers/buzzer.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+drivers/buzzer.o: /usr/msp430/include/msp430libc.h config.h drivers/buzzer.h
+drivers/buzzer.o: drivers/timer.h
+drivers/display.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/display.o: /usr/msp430/include/cc430f6137.h
+drivers/display.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/display.o: /usr/msp430/include/intrinsics.h
+drivers/display.o: /usr/msp430/include/stdlib.h
+drivers/display.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/display.o: /usr/msp430/include/sys/types.h
+drivers/display.o: /usr/msp430/include/sys/cdefs.h
+drivers/display.o: /usr/msp430/include/sys/inttypes.h
+drivers/display.o: /usr/msp430/include/inttypes.h
+drivers/display.o: /usr/msp430/include/stdint.h
+drivers/display.o: /usr/msp430/include/msp430libc.h config.h
+drivers/display.o: /usr/msp430/include/string.h drivers/display.h
+drivers/temperature.o: drivers/temperature.h ./openchronos.h
+drivers/temperature.o: /usr/msp430/include/msp430.h
+drivers/temperature.o: /usr/msp430/include/cc430f6137.h
+drivers/temperature.o: /usr/msp430/include/iomacros.h
+drivers/temperature.o: /usr/msp430/include/in430.h
+drivers/temperature.o: /usr/msp430/include/intrinsics.h
+drivers/temperature.o: /usr/msp430/include/stdlib.h
+drivers/temperature.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/temperature.o: /usr/msp430/include/sys/types.h
+drivers/temperature.o: /usr/msp430/include/sys/cdefs.h
+drivers/temperature.o: /usr/msp430/include/sys/inttypes.h
+drivers/temperature.o: /usr/msp430/include/inttypes.h
+drivers/temperature.o: /usr/msp430/include/stdint.h
+drivers/temperature.o: /usr/msp430/include/msp430libc.h config.h
+drivers/temperature.o: drivers/ports.h drivers/display.h drivers/adc12.h
+drivers/temperature.o: drivers/timer.h
+drivers/rtca.o: drivers/rtca.h ./openchronos.h /usr/msp430/include/msp430.h
+drivers/rtca.o: /usr/msp430/include/cc430f6137.h
+drivers/rtca.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/rtca.o: /usr/msp430/include/intrinsics.h /usr/msp430/include/stdlib.h
+drivers/rtca.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/rtca.o: /usr/msp430/include/sys/types.h
+drivers/rtca.o: /usr/msp430/include/sys/cdefs.h
+drivers/rtca.o: /usr/msp430/include/sys/inttypes.h
+drivers/rtca.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+drivers/rtca.o: /usr/msp430/include/msp430libc.h config.h drivers/rtca_now.h
+drivers/pmm.o: /usr/msp430/include/cc430x613x.h
+drivers/pmm.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/pmm.o: /usr/msp430/include/intrinsics.h drivers/pmm.h
+drivers/ports.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/ports.o: /usr/msp430/include/cc430f6137.h
+drivers/ports.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/ports.o: /usr/msp430/include/intrinsics.h
+drivers/ports.o: /usr/msp430/include/stdlib.h
+drivers/ports.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/ports.o: /usr/msp430/include/sys/types.h
+drivers/ports.o: /usr/msp430/include/sys/cdefs.h
+drivers/ports.o: /usr/msp430/include/sys/inttypes.h
+drivers/ports.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+drivers/ports.o: /usr/msp430/include/msp430libc.h config.h drivers/ports.h
+drivers/ports.o: drivers/timer.h drivers/display.h
+drivers/dsp.o: drivers/dsp.h ./openchronos.h /usr/msp430/include/msp430.h
+drivers/dsp.o: /usr/msp430/include/cc430f6137.h
+drivers/dsp.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/dsp.o: /usr/msp430/include/intrinsics.h /usr/msp430/include/stdlib.h
+drivers/dsp.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/dsp.o: /usr/msp430/include/sys/types.h
+drivers/dsp.o: /usr/msp430/include/sys/cdefs.h
+drivers/dsp.o: /usr/msp430/include/sys/inttypes.h
+drivers/dsp.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+drivers/dsp.o: /usr/msp430/include/msp430libc.h config.h
+drivers/rtc_dst.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/rtc_dst.o: /usr/msp430/include/cc430f6137.h
+drivers/rtc_dst.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/rtc_dst.o: /usr/msp430/include/intrinsics.h
+drivers/rtc_dst.o: /usr/msp430/include/stdlib.h
+drivers/rtc_dst.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/rtc_dst.o: /usr/msp430/include/sys/types.h
+drivers/rtc_dst.o: /usr/msp430/include/sys/cdefs.h
+drivers/rtc_dst.o: /usr/msp430/include/sys/inttypes.h
+drivers/rtc_dst.o: /usr/msp430/include/inttypes.h
+drivers/rtc_dst.o: /usr/msp430/include/stdint.h
+drivers/rtc_dst.o: /usr/msp430/include/msp430libc.h config.h
+drivers/bmp_ps.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/bmp_ps.o: /usr/msp430/include/cc430f6137.h
+drivers/bmp_ps.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/bmp_ps.o: /usr/msp430/include/intrinsics.h
+drivers/bmp_ps.o: /usr/msp430/include/stdlib.h
+drivers/bmp_ps.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/bmp_ps.o: /usr/msp430/include/sys/types.h
+drivers/bmp_ps.o: /usr/msp430/include/sys/cdefs.h
+drivers/bmp_ps.o: /usr/msp430/include/sys/inttypes.h
+drivers/bmp_ps.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+drivers/bmp_ps.o: /usr/msp430/include/msp430libc.h config.h drivers/bmp_ps.h
+drivers/bmp_ps.o: drivers/ps.h drivers/timer.h
+drivers/battery.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/battery.o: /usr/msp430/include/cc430f6137.h
+drivers/battery.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/battery.o: /usr/msp430/include/intrinsics.h
+drivers/battery.o: /usr/msp430/include/stdlib.h
+drivers/battery.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/battery.o: /usr/msp430/include/sys/types.h
+drivers/battery.o: /usr/msp430/include/sys/cdefs.h
+drivers/battery.o: /usr/msp430/include/sys/inttypes.h
+drivers/battery.o: /usr/msp430/include/inttypes.h
+drivers/battery.o: /usr/msp430/include/stdint.h
+drivers/battery.o: /usr/msp430/include/msp430libc.h config.h
+drivers/battery.o: drivers/display.h drivers/battery.h drivers/ports.h
+drivers/battery.o: drivers/adc12.h
+drivers/adc12.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/adc12.o: /usr/msp430/include/cc430f6137.h
+drivers/adc12.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/adc12.o: /usr/msp430/include/intrinsics.h
+drivers/adc12.o: /usr/msp430/include/stdlib.h
+drivers/adc12.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/adc12.o: /usr/msp430/include/sys/types.h
+drivers/adc12.o: /usr/msp430/include/sys/cdefs.h
+drivers/adc12.o: /usr/msp430/include/sys/inttypes.h
+drivers/adc12.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+drivers/adc12.o: /usr/msp430/include/msp430libc.h config.h drivers/adc12.h
+drivers/adc12.o: drivers/timer.h
+drivers/ps.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/ps.o: /usr/msp430/include/cc430f6137.h /usr/msp430/include/iomacros.h
+drivers/ps.o: /usr/msp430/include/in430.h /usr/msp430/include/intrinsics.h
+drivers/ps.o: /usr/msp430/include/stdlib.h
+drivers/ps.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/ps.o: /usr/msp430/include/sys/types.h /usr/msp430/include/sys/cdefs.h
+drivers/ps.o: /usr/msp430/include/sys/inttypes.h
+drivers/ps.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+drivers/ps.o: /usr/msp430/include/msp430libc.h config.h drivers/ps.h
+drivers/ps.o: drivers/timer.h
+drivers/timer.o: drivers/timer.h ./openchronos.h /usr/msp430/include/msp430.h
+drivers/timer.o: /usr/msp430/include/cc430f6137.h
+drivers/timer.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/timer.o: /usr/msp430/include/intrinsics.h
+drivers/timer.o: /usr/msp430/include/stdlib.h
+drivers/timer.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/timer.o: /usr/msp430/include/sys/types.h
+drivers/timer.o: /usr/msp430/include/sys/cdefs.h
+drivers/timer.o: /usr/msp430/include/sys/inttypes.h
+drivers/timer.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+drivers/timer.o: /usr/msp430/include/msp430libc.h config.h
+drivers/rf1a.o: ./openchronos.h /usr/msp430/include/msp430.h
+drivers/rf1a.o: /usr/msp430/include/cc430f6137.h
+drivers/rf1a.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+drivers/rf1a.o: /usr/msp430/include/intrinsics.h /usr/msp430/include/stdlib.h
+drivers/rf1a.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+drivers/rf1a.o: /usr/msp430/include/sys/types.h
+drivers/rf1a.o: /usr/msp430/include/sys/cdefs.h
+drivers/rf1a.o: /usr/msp430/include/sys/inttypes.h
+drivers/rf1a.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+drivers/rf1a.o: /usr/msp430/include/msp430libc.h config.h drivers/rf1a.h
+modules/battery.o: ./openchronos.h /usr/msp430/include/msp430.h
+modules/battery.o: /usr/msp430/include/cc430f6137.h
+modules/battery.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+modules/battery.o: /usr/msp430/include/intrinsics.h
+modules/battery.o: /usr/msp430/include/stdlib.h
+modules/battery.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+modules/battery.o: /usr/msp430/include/sys/types.h
+modules/battery.o: /usr/msp430/include/sys/cdefs.h
+modules/battery.o: /usr/msp430/include/sys/inttypes.h
+modules/battery.o: /usr/msp430/include/inttypes.h
+modules/battery.o: /usr/msp430/include/stdint.h
+modules/battery.o: /usr/msp430/include/msp430libc.h config.h
+modules/battery.o: ./drivers/display.h ./drivers/battery.h
+modules/reset.o: ./openchronos.h /usr/msp430/include/msp430.h
+modules/reset.o: /usr/msp430/include/cc430f6137.h
+modules/reset.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+modules/reset.o: /usr/msp430/include/intrinsics.h
+modules/reset.o: /usr/msp430/include/stdlib.h
+modules/reset.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+modules/reset.o: /usr/msp430/include/sys/types.h
+modules/reset.o: /usr/msp430/include/sys/cdefs.h
+modules/reset.o: /usr/msp430/include/sys/inttypes.h
+modules/reset.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+modules/reset.o: /usr/msp430/include/msp430libc.h config.h
+modules/reset.o: ./drivers/display.h
+modules/rpc.o: ./openchronos.h /usr/msp430/include/msp430.h
+modules/rpc.o: /usr/msp430/include/cc430f6137.h
+modules/rpc.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+modules/rpc.o: /usr/msp430/include/intrinsics.h /usr/msp430/include/stdlib.h
+modules/rpc.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+modules/rpc.o: /usr/msp430/include/sys/types.h
+modules/rpc.o: /usr/msp430/include/sys/cdefs.h
+modules/rpc.o: /usr/msp430/include/sys/inttypes.h
+modules/rpc.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+modules/rpc.o: /usr/msp430/include/msp430libc.h config.h ./SMARTRF_CC430.h
+modules/rpc.o: ./drivers/display.h ./drivers/battery.h ./drivers/ports.h
+modules/rpc.o: ./drivers/timer.h ./drivers/rf1a.h ./drivers/buzzer.h
+modules/rpc.o: /usr/msp430/include/legacymsp430.h
+modules/alarm.o: ./openchronos.h /usr/msp430/include/msp430.h
+modules/alarm.o: /usr/msp430/include/cc430f6137.h
+modules/alarm.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+modules/alarm.o: /usr/msp430/include/intrinsics.h
+modules/alarm.o: /usr/msp430/include/stdlib.h
+modules/alarm.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+modules/alarm.o: /usr/msp430/include/sys/types.h
+modules/alarm.o: /usr/msp430/include/sys/cdefs.h
+modules/alarm.o: /usr/msp430/include/sys/inttypes.h
+modules/alarm.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+modules/alarm.o: /usr/msp430/include/msp430libc.h config.h
+modules/alarm.o: ./drivers/display.h ./drivers/rtca.h
+modules/clock.o: ./openchronos.h /usr/msp430/include/msp430.h
+modules/clock.o: /usr/msp430/include/cc430f6137.h
+modules/clock.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+modules/clock.o: /usr/msp430/include/intrinsics.h
+modules/clock.o: /usr/msp430/include/stdlib.h
+modules/clock.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+modules/clock.o: /usr/msp430/include/sys/types.h
+modules/clock.o: /usr/msp430/include/sys/cdefs.h
+modules/clock.o: /usr/msp430/include/sys/inttypes.h
+modules/clock.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+modules/clock.o: /usr/msp430/include/msp430libc.h config.h ./drivers/rtca.h
+modules/clock.o: ./drivers/display.h
+modules/stopwatch.o: ./openchronos.h /usr/msp430/include/msp430.h
+modules/stopwatch.o: /usr/msp430/include/cc430f6137.h
+modules/stopwatch.o: /usr/msp430/include/iomacros.h
+modules/stopwatch.o: /usr/msp430/include/in430.h
+modules/stopwatch.o: /usr/msp430/include/intrinsics.h
+modules/stopwatch.o: /usr/msp430/include/stdlib.h
+modules/stopwatch.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+modules/stopwatch.o: /usr/msp430/include/sys/types.h
+modules/stopwatch.o: /usr/msp430/include/sys/cdefs.h
+modules/stopwatch.o: /usr/msp430/include/sys/inttypes.h
+modules/stopwatch.o: /usr/msp430/include/inttypes.h
+modules/stopwatch.o: /usr/msp430/include/stdint.h
+modules/stopwatch.o: /usr/msp430/include/msp430libc.h config.h
+modules/stopwatch.o: ./drivers/display.h
+openchronos.o: /usr/msp430/include/msp430.h /usr/msp430/include/cc430f6137.h
+openchronos.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h
+openchronos.o: /usr/msp430/include/intrinsics.h /usr/msp430/include/stdlib.h
+openchronos.o: /usr/lib/gcc/msp430/4.6.3/include/stddef.h
+openchronos.o: /usr/msp430/include/sys/types.h
+openchronos.o: /usr/msp430/include/sys/cdefs.h
+openchronos.o: /usr/msp430/include/sys/inttypes.h
+openchronos.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
+openchronos.o: /usr/msp430/include/msp430libc.h config.h
