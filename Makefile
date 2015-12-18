@@ -59,7 +59,7 @@ $(OBJS): openchronos.cflags
 
 openchronos.elf: even_in_range.o $(OBJS)
 	@echo -e "\n>> Building $@ as target $(TARGET)"
-	@$(CC) $(CFLAGS) $(LDFLAGS) $(INCLUDES) -o $@ $+	
+	@$(CC) $(CFLAGS) $(LDFLAGS) $(INCLUDES) -o $@ $+
 
 openchronos.txt: openchronos.elf
 	$(PYTHON) tools/memory.py -i $< -o $@
@@ -69,8 +69,7 @@ even_in_range.o: even_in_range.s
 
 modinit.o: modinit.c
 	@echo "CC $<"
-	@$(CC) $(CFLAGS) -Wno-implicit-function-declaration \
-		$(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) -Wno-implicit-function-declaration $(INCLUDES) -c $< -o $@
 
 %.o: %.c
 	@echo "CC $<"
@@ -99,6 +98,15 @@ clean: $(SUBDIRS)
 	done
 	@rm -f *.o openchronos.{elf,txt,cflags,dep} output.map
 	@rm -f drivers/rtca_now.h
+
+upload: openchronos.txt
+	mspdebug rf2500 "prog openchronos.elf"
+
+debug: openchronos.txt
+	mspdebug rf2500 gdb
+
+run: openchronos.txt
+	mspdebug rf2500 run
 
 -include openchronos.dep
 # DO NOT DELETE

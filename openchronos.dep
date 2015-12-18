@@ -240,8 +240,8 @@ modules/rpc.o: /usr/msp430/include/sys/inttypes.h
 modules/rpc.o: /usr/msp430/include/inttypes.h /usr/msp430/include/stdint.h
 modules/rpc.o: /usr/msp430/include/msp430libc.h config.h ./SMARTRF_CC430.h
 modules/rpc.o: ./drivers/display.h ./drivers/battery.h ./drivers/ports.h
-modules/rpc.o: ./drivers/timer.h ./drivers/rf1a.h ./drivers/buzzer.h
-modules/rpc.o: /usr/msp430/include/legacymsp430.h
+modules/rpc.o: ./drivers/timer.h ./drivers/rf1a.h ./drivers/rtca.h
+modules/rpc.o: ./drivers/buzzer.h /usr/msp430/include/legacymsp430.h
 modules/alarm.o: ./openchronos.h /usr/msp430/include/msp430.h
 modules/alarm.o: /usr/msp430/include/cc430f6137.h
 modules/alarm.o: /usr/msp430/include/iomacros.h /usr/msp430/include/in430.h

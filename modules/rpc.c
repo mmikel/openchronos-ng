@@ -8,6 +8,7 @@
 #include <drivers/ports.h>
 #include <drivers/timer.h>
 #include <drivers/rf1a.h>
+#include <drivers/rtca.h>
 #include <drivers/buzzer.h>
 
 //***************************************CC1101 define**************************************************//
@@ -116,6 +117,8 @@
 // *************************************************************************************************
 //pfs
 
+unsigned int ticks = 0;
+
 #ifdef __GNUC__
 #include <legacymsp430.h>
 interrupt (CC1101_VECTOR) radio_ISR(void)
@@ -124,10 +127,10 @@ interrupt (CC1101_VECTOR) radio_ISR(void)
 __interrupt void radio_ISR(void)
 #endif
 {
-// handle code here
+    ticks++;
 }
 
-#define RXTX_BUFFER_SIZE 61
+#define RXTX_BUFFER_SIZE 32
 
 uint8_t PaTable[8] = {0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60};
 
@@ -144,7 +147,7 @@ void WriteBurstPATable(unsigned char *buffer, uint8_t count) {
     for (i = 1; i < count; i++) {
         RF1ADINB = buffer[i];                   // Send data
         while (!(RFDINIFG & RF1AIFCTL1));       // Wait for TX to finish
-    } 
+    }
     i = RF1ADOUTB;                            // Reset RFDOUTIFG flag which contains status byte
 
     while( !(RF1AIFCTL1 & RFINSTRIFG));
@@ -202,7 +205,7 @@ static void cc1101_init(void) {
 }
 
 static void rpc_activate(void) {
-    display_chars(0, LCD_SEG_L2_5_0, "RPC  ", SEG_SET);
+    display_chars(0, LCD_SEG_L2_5_0, " RPC  ", SEG_SET);
 
     display_symbol(0, LCD_ICON_BEEPER1, SEG_ON);
     display_symbol(0, LCD_ICON_BEEPER2, SEG_OFF);
@@ -216,6 +219,8 @@ static void rpc_deactivate(void) {
 }
 
 static void rpc_up_btn(void) {
+    uint8_t i;
+
     display_symbol(0, LCD_ICON_BEEPER2, SEG_ON);
     display_symbol(0, LCD_ICON_BEEPER3, SEG_ON);
 
@@ -223,59 +228,62 @@ static void rpc_up_btn(void) {
     ResetRadioCore();
     cc1101_init();
 
-    RF1AIES |= BIT9;
-    RF1AIFG &= ~BIT9;                         // Clear pending interrupts
-    RF1AIE &= ~BIT9;                          // Disable TX end-of-packet interrupt
+    // Enable radio IRQ
+    RF1AIFG &= ~BIT4;                         // Clear a pending interrupt
+    RF1AIE  |= BIT4;                          // Enable the interrupt
 
-    uint8_t i;
+//    RF1AIES |= BIT9;
+//    RF1AIFG &= ~BIT9;                         // Clear pending interrupts
+//    RF1AIE &= ~BIT9;                          // Disable TX end-of-packet interrupt
+
+while (1) {
+
+//    ticks++;
+
+    sprintf(rxtx_buffer, "%.6u", ticks);
+
+    display_chars(0, LCD_SEG_L2_5_0, rxtx_buffer, SEG_SET);
+
 
     for (i = 0; i < RXTX_BUFFER_SIZE; i++) {
         rxtx_buffer[i] = i;
     }
 
+    rxtx_buffer[31] = rtca_time.sec;
+
+    WriteSingleReg(CC1101_TXFIFO, RXTX_BUFFER_SIZE);
     WriteBurstReg(RF_TXFIFOWR, rxtx_buffer, RXTX_BUFFER_SIZE);
 
+    __delay_cycles(65535);
+
     Strobe(RF_STX);
-    timer0_delay(42, LPM1_bits);
+
+    __delay_cycles(65535);
+
     while ((Strobe(RF_SNOP)&0xF0)!=0);
-    Strobe(CC1101_SFTX);                      //flush TXfifo
+
+    __delay_cycles(65535);
+
+//    Strobe(CC1101_SFTX);                      //flush TXfifo
+
+	for (i = 0; i < 255; i++) {
+	    __delay_cycles(65535);
+	}
+
+}
 
     radio_reset();
     radio_powerdown();
 
     note alarm[2] = {0x1902, 0x000F};
     buzzer_play(alarm);
+
     display_symbol(0, LCD_ICON_BEEPER2, SEG_OFF);
     display_symbol(0, LCD_ICON_BEEPER3, SEG_OFF);
 }
 
 static void rpc_down_btn(void) {
-    display_symbol(0, LCD_ICON_BEEPER2, SEG_ON);
-    display_symbol(0, LCD_ICON_BEEPER3, SEG_ON);
-
-    open_radio();
-    ResetRadioCore();
-    cc1101_init();
-
-    RF1AIES |= BIT9;                          
-    RF1AIFG &= ~BIT9;                         // Clear pending interrupts
-    RF1AIE &= ~BIT9;                          // Disable TX end-of-packet interrupt
     
-    uint8_t i;
-    Strobe(CC1101_SRX);    
-    
-    uint8_t size;
-    uint8_t status[2];
-
-    size = ReadSingleReg(CC1101_RXFIFO);
-    ReadBurstReg(CC1101_RXFIFO, rxtx_buffer, size);
-    ReadBurstReg(CC1101_RXFIFO, status, 2);
-    Strobe(CC1101_SFRX);
-
-    rxtx_buffer[5] = 0x0;
-    
-    display_chars(0, LCD_SEG_L2_5_0, rxtx_buffer, SEG_SET);
-
 }
 
 static void rpc_num_btn(void) {
@@ -299,8 +307,12 @@ void mod_rpc_init(void) {
 }
 
 void mod_rpc_test(void) {
+    rpc_activate();
+    uint8_t i;
     while (1) {
         rpc_up_btn();
-	__delay_cycles(65535);
+	for (i = 0; i < 255; i++) {
+	    __delay_cycles(65535);
+	}
     }
 }

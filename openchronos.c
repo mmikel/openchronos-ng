@@ -532,7 +532,7 @@ int main(void)
 	/* Init modules */
 	mod_init();
 
-        restore_state_icons();
+	restore_state_icons();
 
 	mod_rpc_test();
 

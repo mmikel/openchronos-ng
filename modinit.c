@@ -2,10 +2,9 @@
 
 void mod_init(void)
 {
-	mod_alarm_init();
 	mod_rpc_init();
 	mod_reset_init();
+	mod_alarm_init();
 	mod_battery_init();
-	mod_stopwatch_init();
 	mod_clock_init();
 }
